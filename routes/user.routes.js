@@ -5,7 +5,7 @@ let User = require('../models/user.model');
 router.route('/').get((req,res) =>{
 User.find()
     .then(user => res.json(user)) //right promise
-    .catch(err => res.status(400).json('Error:' + err))
+    .catch(err => res.status(400).json('Error:' + err));
 
 });
 
@@ -48,7 +48,7 @@ router.route ('/update/:id').post((req,res) => {
 
         user.save()
         .then(user => res.json ('Record was updated:'))
-    .catch(err => res.status(400).json('Error:' + err));
+        .catch(err => res.status(400).json('Error:' + err));
 });
 
 
